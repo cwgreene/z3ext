@@ -4,7 +4,7 @@ def BitVecL(name, bv, ctx=None):
     """Return a bit-vector constant named `name`. `bv` may be the number of bits of a bit-vector sort.
     If `ctx=None`, then the global context is used.
 
-    >>> x  = BitVec('x', 16)
+    >>> x  = BitVecL('x', 16)
     >>> is_bv(x)
     True
     >>> x.size()
