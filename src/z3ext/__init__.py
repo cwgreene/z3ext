@@ -1,21 +1,6 @@
 import z3
 
 def BitVecL(name, bv, ctx=None):
-    """Return a bit-vector constant named `name`. `bv` may be the number of bits of a bit-vector sort.
-    If `ctx=None`, then the global context is used.
-
-    >>> x  = BitVecL('x', 16)
-    >>> is_bv(x)
-    True
-    >>> x.size()
-    16
-    >>> x.sort()
-    BitVec(16)
-    >>> word = BitVecSort(16)
-    >>> x2 = BitVec('x', word)
-    >>> eq(x, x2)
-    True
-    """
     if isinstance(bv, z3.BitVecSortRef):
         ctx = bv.ctx
     else:
