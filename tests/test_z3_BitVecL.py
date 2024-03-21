@@ -1,5 +1,5 @@
-import z3
-from z3ext import BitVecL
+import z3 # type: ignore[import-untyped]
+from z3ext import BitVecL # type: ignore[import-untyped]
 
 def test_BitVecL():
     b = BitVecL("b", 64)

@@ -26,9 +26,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/unknown/z3ext#readme"
-Issues = "https://github.com/unknown/z3ext/issues"
-Source = "https://github.com/unknown/z3ext"
+Documentation = "https://github.com/cwgreene/z3ext#readme"
+Issues = "https://github.com/cwgreene/z3ext/issues"
+Source = "https://github.com/cwgreene/z3ext"
 
 [tool.hatch.version]
 path = "src/z3ext/__about__.py"
