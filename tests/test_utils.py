@@ -55,6 +55,9 @@ def test_string_startsends_symbol():
     suffix = z3.String("suffix")
     
     solver = z3.Solver()
+    # be nice to say:
+    #   's.endswith(suffix) and s.startswith(prefix)'
+    #   'len(s) == 7'
     solver.add([endswith(s, suffix), startswith(s, prefix)])
     solver.add(z3.Length(s)==7)
     solver.add(z3.Length(prefix)==3)
