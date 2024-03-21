@@ -58,10 +58,10 @@ def test_string_class():
     suffix = String("suffix")
     
     solver = z3.Solver()
-    # be nice to say:
-    #   's.endswith(suffix) and s.startswith(prefix)'
-    #   'len(s) == 7'
-    solver.add([endswith(s, suffix), startswith(s, prefix)])
+    # test endswith, startswith
+    solver.add([s.endswith(suffix), s.startswith(prefix)])
+    
+    # test length
     solver.add(s.length()==7)
     solver.add(prefix.length()==3)
     solver.add(suffix.length()==4)
@@ -69,3 +69,8 @@ def test_string_class():
     assert solver.check() == z3.sat
     m = solver.model()
     assert m[s].as_string() == m[prefix].as_string() + m[suffix].as_string()
+
+    # Test contains
+    solver.add(s.contains(prefix))
+    solver.add(s.contains(suffix))
+    assert solver.check() == z3.sat

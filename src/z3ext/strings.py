@@ -9,6 +9,9 @@ class StringExtRef(z3.SeqRef):
 
     def length(self):
         return z3.Length(self)
+    
+    def contains(self, other):
+        return z3.Contains(self, other)
 
 def String(name, ctx = None):
     """Return a string constant named `name`. If `ctx=None`, then the global context is used.
